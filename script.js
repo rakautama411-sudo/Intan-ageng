@@ -12,6 +12,15 @@ function openInvitation() {
   document.getElementById("ucapan").style.display = "block";
   document.getElementById("penutup").style.display = "block";
 
+document.addEventListener("DOMContentLoaded", function () {
+  const urlParams = new URLSearchParams(window.location.search);
+  const nama = urlParams.get('to');
+
+  if (nama) {
+    document.getElementById("namaTamu").innerText = decodeURIComponent(nama);
+  }
+});
+
   // ▶️ PLAY MUSIC (AMAN UNTUK HP)
   const music = document.getElementById("bg-music");
   music.volume = 0.6;
